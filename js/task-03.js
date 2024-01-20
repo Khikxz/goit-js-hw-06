@@ -13,15 +13,19 @@ const images = [
   },
 ];
 
+const gallery = document.querySelector(".gallery");
+gallery.style.display = "flex";
+gallery.style.flexDirection = "row";
+
 for (const image of images) {
   const { url, alt } = image;
-  const gallery = document.querySelector(".gallery");
   const template = images.map(() => `<li class="gallery-item"><img class = "gallery-image"/></li>`).join("");
   gallery.insertAdjacentHTML("afterBegin", template);
 
   const pic = document.querySelector(".gallery-image");
   pic.src = url;
   pic.alt = alt;
+  pic.style.height = "250px";
 }
 
 
